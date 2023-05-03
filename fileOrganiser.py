@@ -1,7 +1,7 @@
 import os
 import shutil
-
-path=os.getcwd()
+print("Enter the path of the folder:")
+path=input()
 path = os.path.realpath(path) 
 extensions={
     'pdf': 'Documents',
@@ -46,7 +46,7 @@ extensions={
     'temp':'Temporary',
     'js':'Java Script'
 }
-
+os.chdir(path)
 for entry in os.listdir(path):
     if os.path.isfile(os.path.join(path, entry)):
         try:
