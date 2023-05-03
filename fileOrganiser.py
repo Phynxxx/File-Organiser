@@ -13,6 +13,7 @@ extensions={
     'jpg':'Images',
     'jpeg':'Images',
     'gif':'Images',
+    'webp':'Images',
     'png':'Images',
     'svg':'Images',
     'mp3':'Musics',
@@ -42,6 +43,7 @@ extensions={
     'pyc':'Python',
     'c':'C',
     'tmp':'Temporary',
+    'temp':'Temporary',
     'js':'Java Script'
 }
 
@@ -49,7 +51,7 @@ for entry in os.listdir(path):
     if os.path.isfile(os.path.join(path, entry)):
         try:
             file_name, file_extension = os.path.splitext(entry)  
-            dir_name= extensions[file_extension[1:]]
+            dir_name= extensions[file_extension[1:].lower()]
             try:
                 os.mkdir(f"{dir_name}")
             except FileExistsError:
